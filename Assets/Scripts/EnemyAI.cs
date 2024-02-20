@@ -25,19 +25,12 @@ public class NewBehaviourScript : MonoBehaviour
     {
         NoticePlayerUpdate();
         ChaseUpdate();
-
-        if (_isPlayerNoticed)
-        {
-            _navMeshAgent.destination = player.transform.position;
-        }
-
         PatrolUpdate();
     }
     private void NoticePlayerUpdate()
     {
         var direction = player.transform.position - transform.position;
         _isPlayerNoticed = false;
-
         if (Vector3.Angle(transform.forward, direction) < viewAngle)
         {
             RaycastHit hit;
@@ -51,12 +44,14 @@ public class NewBehaviourScript : MonoBehaviour
         }  
         
     }
-
     private void PatrolUpdate()
     {
-        if (_navMeshAgent.remainingDistance == 0)
+        if (!_isPlayerNoticed)
         {
-            PickNewPatrolPoint();
+            if (_navMeshAgent.remainingDistance == 0)
+            {
+                PickNewPatrolPoint();
+            }
         }
     }
     private void PickNewPatrolPoint()
@@ -66,7 +61,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void ChaseUpdate()
     {
-        if (!_isPlayerNoticed)
+        if (_isPlayerNoticed)
         {
             _navMeshAgent.destination = player.transform.position;
         }

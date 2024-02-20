@@ -107,7 +107,7 @@ NavMeshSettings:
     serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
-    agentHeight: 1
+    agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
@@ -305,6 +305,8 @@ GameObject:
   - component: {fileID: 152941635}
   - component: {fileID: 152941637}
   - component: {fileID: 152941638}
+  - component: {fileID: 152941640}
+  - component: {fileID: 152941639}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -321,7 +323,7 @@ Transform:
   m_GameObject: {fileID: 152941634}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.053, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -338,7 +340,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -368,7 +370,43 @@ MonoBehaviour:
   - {fileID: 131331316}
   - {fileID: 219120817}
   player: {fileID: 725530921}
-  viewAngle: 0
+  viewAngle: 90
+--- !u!136 &152941639
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152941634}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.65
+  m_Height: 4.35
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &152941640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152941634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c84ef25de51f3489cbcd9289c47375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 100
 --- !u!1 &153956473
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +670,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5723101485815020434, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
       propertyPath: jumpForce
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487454155039330482, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487454155039330482, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487454155039330482, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 8487454155039330482, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
       propertyPath: m_LocalPosition.x
@@ -673,6 +723,10 @@ PrefabInstance:
     - target: {fileID: 8487454155039330482, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487454155039330482, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
