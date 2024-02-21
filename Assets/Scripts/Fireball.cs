@@ -9,15 +9,6 @@ public class Fireball : MonoBehaviour
     public float Lifetimer;
     public float damage = 10;
 
-    private void DamageEnemy(Collision collision)
-    {
-        var enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
-        {
-            enemyHealth.DealDamage(damage);
-        }
-    }
-
     private void Start()
     {
         Invoke("DestroyFireball", Lifetimer);
@@ -28,9 +19,31 @@ public class Fireball : MonoBehaviour
         MoveFixedUpdate();
     }
 
-
     private void MoveFixedUpdate()
     {
         transform.position += transform.forward * Speed * Time.fixedDeltaTime;
     }
+
+    private void DamageEnemy(Collision collision)
+    {
+        var enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
+        {
+            enemyHealth.DealDamage(damage);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.root.TryGetComponent(out EnemyHealth health))
+        {
+            health.DealDamage(damage);            
+        }
+        DestroyFireball();
+    }
+
+
+    private void DestroyFireball()
+    {
+        Destroy(gameObject);
+    }      
 }
