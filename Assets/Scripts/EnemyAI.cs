@@ -8,9 +8,11 @@ public class NewBehaviourScript : MonoBehaviour
     public List<Transform> patrolPoints;
     public PlayerController player;
     public float viewAngle;
+    public float damage = 30;
 
     private NavMeshAgent _navMeshAgent;
     private bool _isPlayerNoticed;
+    private PlayerHealth _playerHealth;
 
     void Start()
     {
@@ -19,14 +21,18 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private void InitComponentLinks()
     {
-       _navMeshAgent = GetComponent<NavMeshAgent>();
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+        _playerHealth = player.GetComponent<PlayerHealth>();
     }
+    
     private void Update()
     {
         NoticePlayerUpdate();
         ChaseUpdate();
+        AttackUpdate();
         PatrolUpdate();
     }
+
     private void NoticePlayerUpdate()
     {
         var direction = player.transform.position - transform.position;
@@ -39,16 +45,16 @@ public class NewBehaviourScript : MonoBehaviour
                 if (hit.collider.gameObject == player.gameObject)
                 {
                     _isPlayerNoticed = true;
-                }              
-            }            
-        }  
-        
+                }
+            }
+        }
+
     }
     private void PatrolUpdate()
     {
         if (!_isPlayerNoticed)
         {
-            if (_navMeshAgent.remainingDistance == 0)
+            if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
                 PickNewPatrolPoint();
             }
@@ -66,4 +72,16 @@ public class NewBehaviourScript : MonoBehaviour
             _navMeshAgent.destination = player.transform.position;
         }
     }
+
+    private void AttackUpdate()
+    {
+        if (_isPlayerNoticed)
+        {
+            if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
+            {
+               _playerHealth.DealDamage(damage * Time.deltaTime);
+            }
+        }
+    }
+
 }
