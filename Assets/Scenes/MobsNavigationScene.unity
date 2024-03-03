@@ -681,6 +681,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2656318553245149775, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
+      propertyPath: m_Height
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656318553245149775, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656318553245149775, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 2882704487906582509, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
       propertyPath: valueRectTransform
       value: 
@@ -699,15 +711,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8487454155039330482, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8487454155039330482, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8487454155039330482, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8487454155039330482, guid: a08b44b993fe2c94e8938db6c91fc190, type: 3}
       propertyPath: m_LocalPosition.x
