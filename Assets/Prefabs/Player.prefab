@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d873240861eb4142a7103e315ad0705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   fireballPrefab: {fileID: 6255620571612991422, guid: 5c7719c633928d543b30a1da9db5d6a7, type: 3}
   fireballSourceTransform: {fileID: 3295079384144182707}
 --- !u!114 &2882704487906582509
@@ -311,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b3dc78d60d3144a85c5baf8e20e0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 30
   grenadePrefab: {fileID: 7720962600801985191, guid: a72885e93c1e4c5449d8f2a4888f2ed7, type: 3}
   grenadeSourceTransform: {fileID: 160898356240068938}
   force: 10
@@ -326,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42ca2c5e1fb38c4c990b356538a6396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels: []
   experienceValueRectTransfrom: {fileID: 1012002063806800684}
   LevelValueTMP: {fileID: 6529626458727423925}
 --- !u!1 &3602001419364890686
@@ -1224,7 +1227,7 @@ Transform:
   m_GameObject: {fileID: 7996253528100897395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.875, y: 1.364, z: -0.025}
+  m_LocalPosition: {x: 0.65, y: 1.48, z: -0.232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

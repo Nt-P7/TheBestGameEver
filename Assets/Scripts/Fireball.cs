@@ -41,9 +41,25 @@ public class Fireball : MonoBehaviour
         DestroyFireball();
     }
 
+    private int SoundRand;
+
+
 
     private void DestroyFireball()
     {
+        // SoundRand = Random.Range(0, 1);
+        // if (SoundRand == 0)
+        // {
+        //      object audioSource = null;
+        //      audioSource.Play(0);
+        //  }
+
+        //void OnTriggerEnter2D(Collider2D other)
+      //  {
+      //      if (other.CompareTag("Преп"))
+      //        AudioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
+      //  }
+
         Destroy(gameObject);
     }      
 }

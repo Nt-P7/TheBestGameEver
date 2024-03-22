@@ -16,6 +16,13 @@ public class NewBehaviourScript : MonoBehaviour
     private bool _isPlayerNoticed;
     private PlayerHealth _playerHealth;
 
+    private EnemyHealth _enemyHealth;
+
+    public bool IsAlive()
+    {
+        return _enemyHealth.IsAlive();
+    }
+
     void Start()
     {
         InitComponentLinks();
@@ -25,6 +32,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _playerHealth = player.GetComponent<PlayerHealth>();
+        _enemyHealth = GetComponent<EnemyHealth>();
     }
     
     private void Update()
